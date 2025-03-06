@@ -27,6 +27,10 @@ public class Time {
         this.minute = minute;
     }
 
+    public void setTime(int hour, int minute, int second) {
+        System.out.printf("%d:%d:%d", hour, minute, second);
+    }
+
     public int getSecond() {
         return second;
     }

@@ -1,24 +1,30 @@
 package simpleSchoolManagementSystem;
 
 public class Student {
-    int id;
-    String firstName;
-    String lastName;
-    int grade;
-    double feesPaid;
-    double feesTotal;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int grade;
+    private double feesPaid;
+    private double feesTotal;
+    int counterOfStudents = 1;
     School school;
 
+    {
+        counterOfStudents++;
+    }
     Student(int id, String firstName, String lastName, int grade, double feesTotal){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.grade = grade;
         this.feesTotal = feesTotal;
+        counterOfStudents++;
     }
     int getId(){
         return id;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -51,7 +57,7 @@ public class Student {
     void pay(int fees){
         feesPaid += fees;
         feesTotal -= fees;
-        school.totalMoneyEarned += fees;
+        school.updateTotalMoneySpent(fees);
     }
 
     @Override
