@@ -1,7 +1,5 @@
 package simpleSchoolManagementSystem;
 
-import java.util.Arrays;
-
 public class School {
     private Teacher[] teachers = new Teacher[100];
     private Student[] students = new Student[100];

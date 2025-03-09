@@ -1,20 +1,24 @@
 package oop_3;
 
-public class Book2 {
+public class Book_2_3 {
+    String isbn;
     String name;
-    Author[] authors;
+    Author author;
     double price;
     int qty;
 
-    Book2(String name, Author author, double  price){
+    Book_2_3(String isbn, String name, Author author, double  price){
+        this.isbn = isbn;
         this.name = name;
-        this.authors = authors;
+        this.author = author;
         this.price = price;
         qty = 0;
     }
-    Book2(String name, Author author, double  price, int qty){
+
+    Book_2_3(String isbn, String name, Author author, double  price, int qty){
+        this.isbn = isbn;
         this.name = name;
-        this.authors = authors;
+        this.author = author;
         this.price = price;
         this.qty = qty;
     }
@@ -23,8 +27,8 @@ public class Book2 {
         return name;
     }
 
-    public Author[] getAuthorss() {
-        return authors;
+    public Author getAuthor() {
+        return author;
     }
 
     public double getPrice() {
@@ -43,19 +47,21 @@ public class Book2 {
         this.qty = qty;
     }
 
+    public String getAuthorName(){
+        return author.name;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
-                ", author=" + authors +
+                ", author=" + author +
                 ", price=" + price +
                 ", qty=" + qty +
                 '}';
-    }
-
-    public void getAuthorName(){
-        for (int i = 0; i < authors.length; i++) {
-            System.out.printf("%dst author name: %s%n", i, authors[i]);
-        }
     }
 }
